@@ -3,37 +3,34 @@
     <title>Livechat demo</title>
   </head>
   <body>
-    <h1>Livechat demo</h1>
+    <h1 style="display: flex; justify-content: center;">Livechat demo</h1>
+
     <p></p>
     <script>
       var webchat;
-      ((window, document, node, props, configs) => {
-        if (window.TalkdeskChatSDK) {
-          console.error("TalkdeskChatSDK already included");
+      ((window, document, props, configs) => {
+      if (window.TalkdeskChatSDK) {
+          console.error('TalkdeskChatSDK already included');
           return;
-        }
-        var divContainer = document.createElement("div");
-        divContainer.id = node;
-        document.body.appendChild(divContainer);
-        var src = `https://talkdeskchatsdk.svc.talkdeskstg.com/talkdeskchatsdk.js?t=${new Date().getTime()}`;
-        var script = document.createElement("script");
-        var firstScriptTag = document.getElementsByTagName("script")[0];
-        script.type = "text/javascript";
-        script.id = "tdwebchatscript";
-        script.src = src;
-        script.async = true;
-        firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
-        script.onload = () => {
-          webchat = TalkdeskChatSDK(node, props);
-          webchat.init(configs);
-        };
-      })(
-        window,
-        document,
-        "tdWebchat",
-        { flowId: "91b210b4950f4a3599bd3619818ca07e", accountId: "" },
-        { enableEmoji: true, enableUserInput: true }
-      );
+      }
+      var divContainer = document.createElement('div');
+      divContainer.id = node;
+      document.body.appendChild(divContainer);
+      var src = `https://talkdeskchatsdk.svc.talkdeskqa.com/talkdeskchatsdk.js?t=${new Date().getTime()}`;
+      var script = document.createElement('script');
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      script.type = 'text/javascript';
+      script.id = 'tdwebchatscript';
+      script.src = src;
+      script.async = true;
+      firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+      script.onload = () => {
+          webchat=TalkdeskChatSDK(node, params);webchat.init(props);
+      };
+      })(window, document, 'tdWebchat', { flowId: "4bddf2c1acd34e4d8e4f708db812d7b0", accountId: "" }, 
+      { enableEmojiPicker: true, enableUserInput: true });
+
+
     </script>
   </body>
 </html>
