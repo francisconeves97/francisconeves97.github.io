@@ -16,7 +16,7 @@
         var divContainer = document.createElement("div");
         divContainer.id = node;
         document.body.appendChild(divContainer);
-        var src = `https://talkdeskchatsdk.svc.talkdeskqa.com/talkdeskchatsdk.js?t=${new Date().getTime()}`;
+        var src = `https://talkdeskchatsdk.svc.talkdeskstg.com/talkdeskchatsdk.js?t=${new Date().getTime()}`;
         var script = document.createElement("script");
         var firstScriptTag = document.getElementsByTagName("script")[0];
         script.type = "text/javascript";
@@ -32,7 +32,7 @@
         window,
         document,
         "tdWebchat",
-        { flowId: "4bddf2c1acd34e4d8e4f708db812d7b0", accountId: "" },
+        { flowId: "26970d05b99b491ba57fdf9f29782193", accountId: "" },
         { enableEmoji: true, enableUserInput: true }
       );
     </script>
